@@ -100,8 +100,18 @@ def myClosure = {
 def myList = ["Gradle","Groovy","Android"]
 def printItem = {item -> println "List item $item"}
 myList.each(printItem)
-
 myList.each{ printItem "Compactly print each List item $it " }
+
+//task Configuration
+task("myTasks2")
+task "myTasks3"
+task mytask4
+mytask4.description = "This is whats shown in task list"
+mytask4.group = "Heading for task list"
+mytask4.doLast{println "Do this last"}
+mytask4.doFirst{println "Do this first"}
+mytask4.leftShift{println "Do this even more last"}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
