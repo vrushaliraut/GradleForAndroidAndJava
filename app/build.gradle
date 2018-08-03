@@ -34,7 +34,21 @@ task groovy{
     JavaGreeter greeter = new JavaGreeter()
     greeter.sayhello()
 
+    //function declaration
     def foo = 9
+    println("doubleIt($foo) = ${doubleIt(foo)}")
+
+
+    foo = "fooBar"
+    println("doubleIt($foo) = ${doubleIt(foo)}")
+
+    //nested function call
+    /*Leave off paranthesis for ambigious functions*/
+    oneArgs 500
+    twoArgs 200,500
+    noArgs()
+    twoArgs oneArgs(233), 400
+
     println "Foo is of type ${foo.class} and has value: $foo"
     foo = "Reassign"
     println("$foo")
@@ -50,7 +64,22 @@ class JavaGreeter{
 
 
 //declare functions  in groovy
+def doubleIt(n){
+    n + n //We don't need return type in groovy functions
+}
 
+def noArgs(){
+    println "Called the no args function"
+}
+
+def oneArgs(x){
+    println "Called the one args function $x"
+    x
+}
+def twoArgs(x, y){
+    println "Called the two args function $x and $y"
+    x + y
+}
 
 
 dependencies {
