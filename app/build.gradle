@@ -33,9 +33,14 @@ task hello{
 task groovy{
     JavaGreeter greeter = new JavaGreeter()
     greeter.sayhello()
+    def foo = 9
+    println "Foo is of type ${foo.class} and has value: $foo"
+    foo = "Reassign"
+    println("$foo")
+    println "Foo is of type ${foo.class} and has value: $foo"
 
     //function declaration
-    def foo = 9
+    foo = 9
     println("doubleIt($foo) = ${doubleIt(foo)}")
 
 
@@ -49,10 +54,12 @@ task groovy{
     noArgs()
     twoArgs oneArgs(233), 400
 
-    println "Foo is of type ${foo.class} and has value: $foo"
-    foo = "Reassign"
-    println("$foo")
-    println "Foo is of type ${foo.class} and has value: $foo"
+    //closure and object
+    /* */
+   // myClosure()
+
+    def boo = "brand"
+    println "$boo + boo = ${boo + "boo"}"
 }
 
 //Declare one java class
@@ -81,6 +88,20 @@ def twoArgs(x, y){
     x + y
 }
 
+
+def foo = "one million dollar"
+def myClosure = {
+    println "Hello from a closure"
+    println "The value of foo is $foo"
+}
+
+//groovy list with closure
+
+def myList = ["Gradle","Groovy","Android"]
+def printItem = {item -> println "List item $item"}
+myList.each(printItem)
+
+myList.each{ printItem "Compactly print each List item $it " }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
