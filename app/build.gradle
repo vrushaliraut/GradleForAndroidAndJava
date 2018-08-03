@@ -8,7 +8,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "bootcamp.com.gradleforandroidandjava"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -21,6 +21,37 @@ android {
         }
     }
 }
+
+//groovy language
+task hello{
+    doLast{
+        println 'hello world !'
+    }
+}
+
+//Declares variable in groovy
+task groovy{
+    JavaGreeter greeter = new JavaGreeter()
+    greeter.sayhello()
+
+    def foo = 9
+    println "Foo is of type ${foo.class} and has value: $foo"
+    foo = "Reassign"
+    println("$foo")
+    println "Foo is of type ${foo.class} and has value: $foo"
+}
+
+//Declare one java class
+class JavaGreeter{
+    public static void sayhello() {
+        System.out.println('Hello World')
+    }
+}
+
+
+//declare functions  in groovy
+
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
