@@ -22,6 +22,19 @@ android {
     }
 }
 
+//custome tack - Adhoc task
+class HelloTask extends DefaultTask{
+    String firstName
+    @TaskAction
+    void doAction(){
+        println "Hello world ,$firstName"
+    }
+}
+
+task hello(type: HelloTask){
+    firstName = 'vrushali'
+}
+
 //groovy language
 task hello{
     doLast{
@@ -112,6 +125,47 @@ mytask4.doLast{println "Do this last"}
 mytask4.doFirst{println "Do this first"}
 mytask4.leftShift{println "Do this even more last"}
 
+//Task dependencies and ordering
+task putOnSocks{
+    doLast{
+        println "Putting on Socks"
+    }
+}
+
+task putOnShoes{
+    dependsOn "PutOnSocks"
+    doLast{
+        println "Putting on Shoes.."
+    }
+}
+
+
+//Task Dependencies :- ShouldRunAfter, mustRunAfter
+task takeshower{
+    doLast{
+        println "Taking a shower"
+    }
+}
+
+task putOnFragrance{
+    shouldRunAfter "takeShower"
+    doLast{
+        println "Smelling Fresh"
+    }
+}
+
+
+//** FILE INTERACTION ***//
+task copyImages(type : Copy){
+    from 'images'
+    into 'build'
+}
+
+task copyJPESs(type : Copy){
+    from 'images'
+    include '*.jpg'
+    into 'build'
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
