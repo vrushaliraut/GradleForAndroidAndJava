@@ -1,0 +1,5 @@
+1. gradle dependencies --configuration runtime - show dependency graph of how it gets added
+2. gradle dependenciesInSight --dependency commons-logging  - helpful when and how dependency get added,
+specially helpful for solving the version conflicts
+
+3. gradle dependencies  - show all dependencies
