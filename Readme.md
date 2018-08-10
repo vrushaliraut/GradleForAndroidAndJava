@@ -1,6 +1,3 @@
-# Gojek Send Repo App ( JARVIS )
----
-
 ## Getting Started
 ### Prerequisites
 
