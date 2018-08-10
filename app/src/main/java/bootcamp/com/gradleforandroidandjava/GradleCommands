@@ -3,3 +3,4 @@
 specially helpful for solving the version conflicts
 
 3. gradle dependencies  - show all dependencies
+4. ./gradlew projects - tells Subprojects

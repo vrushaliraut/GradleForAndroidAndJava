@@ -1,6 +1,6 @@
-//apply plugin: 'com.android.application'
+apply plugin: 'com.android.application'
 
-//apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "java"
@@ -11,7 +11,6 @@ task execute(type: JavaExec){
 }
 
 
-/*
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -29,7 +28,6 @@ android {
         }
     }
 }
-*/
 
 //custome tack - Adhoc task
 class HelloTask extends DefaultTask{
@@ -167,7 +165,7 @@ task putOnFragrance{
 //** FILE INTERACTION ***//
 task copyImages(type : Copy){
     from 'images'
-    into 'build'
+    into 'build'x`
 }
 
 task copyJPESs(type : Copy){
@@ -181,11 +179,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
 
-    /*implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    */
-    //androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    //androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
