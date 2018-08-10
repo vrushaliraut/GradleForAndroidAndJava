@@ -18,9 +18,7 @@
 10.Dependency management
 11.Dependency Reports
 12.Automation Testing
-13.Gradle wrapper -
-composed of 4 parts 1.Jar 2.Property File 3.Pair of scripts  4.Shell script for Unix and Mac, Batch for Windows
-
+13.Gradle wrapper -composed of 4 parts - 1.Jar 2.Property File 3.Pair of scripts 4.Shell script for Unix and Mac, Batch for Windows
 14. Android Studio,Gradle,and Variants
 15.BuidTypes,BuildTools
 16.Gradle MultiProject
